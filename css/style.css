@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Rubik+Moonrocks&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* transition: 0.3s; */
+}
+:root {
+  --padding: 50px;
+  --trans: 0.3s;
+}
+/* Components*/
+.main-title {
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: 'Rubik Moonrocks';
+  color: black;
+  text-transform: uppercase;
+}
+@media(max-width: 575px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+}
+@media(max-width: 767px) {
+  .main-title {
+    font-size: 2.5rem;
+  }                           
+}
+@media(min-width: 768px) and (max-width: 992px) {
+  .main-title {
+    font-size: 3rem;
+  }
+}
+/* Components*/
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+::-webkit-scrollbar {
+  height: 100%;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #5800ff;
+  border-radius: 50px;
+  transition: var(--trans);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0d6efd;
+}
+a{
+  text-decoration: none;
+}
+/* ===================== Start Page ===================== */
+body{
+  font-family: 'Bruno Ace SC', cursive, 'Segoe UI', Roboto, 'Open Sans', sans-serif, system-ui, -apple-system;
+  background-image: url(/img/stars1.png);
+  /* background-image: url(/img/0.jpeg); */
+  background-repeat: repeat;
+  background-size: cover;
+}
+header{
+  background-color: black;
+  font-family: 'Bruno Ace SC', cursive;
+  height: 50px;
+  color: white;
+}
+header nav a {
+  transition: var(--trans);
+  text-decoration: none;
+}
+header nav a:hover,
+header nav a.active {
+  color: white;
+}
+@media(max-width: 992px) {
+  header nav #toggle{
+    cursor: pointer;
+  }
+  header nav .menu {
+    display: none;
+  }
+  header .fa-moon{
+    color: white;
+  }
+}
+@media(max-width: 992px) {
+  header nav:hover .menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    /* top: calc(100% + 5px); */
+    background-color: black;
+    border-radius: 0 0 10px  10px;
+  }
+  header nav .menu a {
+    padding: 10px;
+    display: block;
+  }
+}
+header aside input[type="text"] {
+  border: transparent;
+  outline: none;
+  padding: 10px;
+}
+@media(max-width: 767px) {
+  header aside input[type="text"] {
+    display: none;
+  }
+}
+/* ===================== Start Title ===================== */
+.title {
+  padding-top: var(--padding);
+}
+.title .container :is(h1) {
+  line-height: 1.2em;
+  /* background-image: url(/img/matheo-joubert-unsplash.jpg); */
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* color: transparent; */
+  transition: var(--trans);
+}
+.title .container p {
+  text-transform: capitalize;
+  line-height: 1.8em;
+  transition: var(--trans);
+}
+.title .container button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Bruno Ace SC', cursive;
+  background-color: black;
+  border: black;
+  color: white;
+}
+.title .container button:hover i {
+  scale: 1.3;
+  rotate: 10deg;
+}
+@media(max-width: 575px) {
+  .title .container :is(h1) {
+    font-size: 1.5rem;
+  }
+  .title .container p {
+    font-size: .7rem;
+  }
+}
+@media(max-width: 767px) {
+  .title .container :is(h1) {
+    font-size: 2.5rem;
+  }
+  .title .container p {
+    font-size: .9rem;
+  }
+}
+/* ===================== Start Title ===================== */
+
+/* ===================== Start Karim ===================== */
+
+/* ===================== Start Work ===================== */
+.work {
+  padding-bottom: 50px;
+  background-color: coral;
+}
+.work .container  {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.work .container .boxwork {
+  background-color: rgba(32, 32, 32, 0.144);
+  padding: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: 'Bruno Ace SC', cursive;
+  height: fit-content;
+  width: fit-content;
+  counter-increment: my-counter;
+  position: relative;
+}
+.work .container .boxwork h4 {
+  color: black;
+}
+.work .container .boxwork h4::after {
+  content: " 0"counter(my-counter);
+}
+.work .container .boxwork a img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.work .container .boxwork .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+.work .container .boxwork .info a {
+  color: black;
+  font-size: 20px;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: var(--trans);
+}
+.work .container .boxwork .info a:hover,
+.work .container .boxwork .info a:focus {
+  background-color: #5800ff;
+}
+.work .container .boxwork .info a:hover ion-icon {
+  color: white;
+}
+.work .container .boxwork span {
+  pointer-events: none;
+}
+.work .container .boxwork span h6 {
+  position: relative;
+  transition: var(--trans);
+  margin-top: 10px;
+  color: black;
+  pointer-events: visible;
+  width: fit-content;
+}
+.work .container .boxwork span h6:hover{
+  padding-bottom: 30px;
+}
+.work .container .boxwork span p {
+  transition: var(--trans);
+  position: absolute;
+  bottom: -100px;
+  white-space: nowrap;
+}
+.work .container .boxwork span:hover p {
+  bottom: -10px;
+}
+/* ===================== Start Contact ===================== */
+.contact {
+  padding-bottom: 50px;
+  background-color: darkcyan;
+}
+.contact .container  {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+.contact .container .box {
+  gap: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact .container .box input, textarea {
+  border: 2px solid black;
+  outline: none;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: transparent;
+}
+.contact .container .box textarea {
+  min-height: 200px;
+  resize: none;
+}
+.contact .container .box input[type="button"] {
+  padding: 10px 20px;
+  border: transparent;
+  background-color: black;
+  color: white;
+  width: fit-content;
+  font-family: 'Bruno Ace SC', cursive;
+}
+.contact .container .box:last-child {
+  align-items: flex-start;
+  justify-content: center;
+}
+.contact .container .box img {
+  max-width: 100%;
+}
+/* ===================== Start Footer ===================== */
+footer {
+  height: 50px;
+}
+footer .social {
+  width: 300px;
+  max-width: 400px;
+}
+footer .social li a {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  background-color: gold;
+  width: 40px;
+  height: 40px;
+}
+footer .social li a i {
+  transition: var(--trans);
+}
+footer .social li a:hover i {
+  transform: translateY(-30px);
+  scale: 2;
+  color: #5800ff;
+}
+
+/* :root {
+  --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-body-bg-rgb: 255, 255, 255;
+} */
