@@ -266,7 +266,6 @@ header aside input[type="text"] {
   outline: none;
   padding: 15px;
   border-radius: 10px;
-  width: 100%;
   background-color: transparent;
 }
 .contact .container .box textarea {
