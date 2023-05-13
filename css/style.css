@@ -69,6 +69,7 @@ header{
   font-family: 'Bruno Ace SC', cursive;
   height: 50px;
   color: white;
+  z-index: 100;
 }
 header nav a {
   transition: var(--trans);
@@ -96,7 +97,7 @@ header nav a.active {
     top: 100%;
     /* top: calc(100% + 5px); */
     background-color: black;
-    border-radius: 0 0 10px  10px;
+    border-radius: 0 0 10px 10px;
   }
   header nav .menu a {
     padding: 10px;
@@ -119,16 +120,32 @@ header aside input[type="text"] {
 }
 .title .container :is(h1) {
   line-height: 1.2em;
-  /* background-image: url(/img/matheo-joubert-unsplash.jpg); */
+  background-image: url(/img/matheo-joubert-unsplash.jpg);
   background-repeat: repeat;
   background-clip: text;
   -webkit-background-clip: text;
   /* color: transparent; */
   transition: var(--trans);
 }
+@media(max-width: 767px) {
+  .title {
+    padding-top: calc(var(--padding) + 50px);
+    padding-bottom: calc(var(--padding) + 50px);
+  }
+  .title .container :is(h1) {
+    text-align: center;
+    line-height: 1.8;
+  }
+  .title .container p {
+    font-size: 1.2em;
+    line-height: 2.5;
+    text-align: center;
+  }
+}
 .title .container p {
   text-transform: capitalize;
   line-height: 1.8em;
+  font-size: 1.5em;
   transition: var(--trans);
 }
 .title .container button {
@@ -139,9 +156,14 @@ header aside input[type="text"] {
   border: black;
   color: white;
 }
+.title .container button i {
+  margin-right: 5px;
+  transition: var(--trans);
+}
 .title .container button:hover i {
   scale: 1.3;
   rotate: 10deg;
+  color: #2d2d;
 }
 @media(max-width: 575px) {
   .title .container :is(h1) {
