@@ -173,6 +173,11 @@ header aside input[type="text"] {
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
+@media(max-width: 767px) {
+  .work .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
 .work .container .boxwork {
   background-color: rgba(32, 32, 32, 0.144);
   padding: 10px;
@@ -248,10 +253,15 @@ header aside input[type="text"] {
   padding-bottom: 50px;
   background-color: darkcyan;
 }
-.contact .container  {
+.contact .container {
   display: grid;
-  gap: 20px;
+  /* gap: 20px; */
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+@media(max-width: 767px) {
+  .contact .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 .contact .container .box {
   gap: 10px;
@@ -259,13 +269,14 @@ header aside input[type="text"] {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
 }
 .contact .container .box input, textarea {
   border: 2px solid black;
   outline: none;
   padding: 15px;
   border-radius: 10px;
+  /* width: 100%; */
   background-color: transparent;
 }
 .contact .container .box textarea {
