@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Rubik+Moonrocks&display=swap');
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,6 +8,7 @@
 :root {
   --padding: 50px;
   --trans: 0.3s;
+  --bg-color: rgb(234, 235, 236);
 }
 /* Components*/
 .main-title {
@@ -53,16 +54,13 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #0d6efd;
 }
-a{
-  text-decoration: none;
-}
 /* ===================== Start Page ===================== */
 body{
   font-family: 'Bruno Ace SC', cursive, 'Segoe UI', Roboto, 'Open Sans', sans-serif, system-ui, -apple-system;
   background-image: url(/img/stars1.png);
   /* background-image: url(/img/0.jpeg); */
   background-repeat: repeat;
-  background-size: cover;
+  background-size: contain;
 }
 header{
   background-color: black;
@@ -129,8 +127,9 @@ header aside input[type="text"] {
 }
 @media(max-width: 767px) {
   .title {
-    padding-top: calc(var(--padding) + 50px);
-    padding-bottom: calc(var(--padding) + 50px);
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
   .title .container :is(h1) {
     text-align: center;
@@ -181,14 +180,54 @@ header aside input[type="text"] {
     font-size: .9rem;
   }
 }
-/* ===================== Start Title ===================== */
+/* ===================== Start About ===================== */
 
-/* ===================== Start Karim ===================== */
-
+/* ===================== Start Services ===================== */
+.services {
+  background-color: var(--bg-color);
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.services .container .serv-box {
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  scale: .9;
+  transition: var(--trans);
+  background-color: white;
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+.services .container .serv-box:hover {
+  scale: 1;
+}
+.services .container .serv-box i {
+  font-size: 30px;
+  color: black;
+}
+.services .container .serv-box h4 {
+  margin: 20px 0;
+  color: black;
+}
+.services .container .serv-box p {
+  line-height: 2;
+  color: black;
+}
 /* ===================== Start Work ===================== */
 .work {
   padding-bottom: 50px;
-  background-color: coral;
+  /* background-color: coral; */
 }
 .work .container  {
   display: grid;
@@ -197,10 +236,10 @@ header aside input[type="text"] {
 }
 @media(max-width: 767px) {
   .work .container {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
-.work .container .boxwork {
+.work .container .box-work {
   background-color: rgba(32, 32, 32, 0.144);
   padding: 10px;
   border-radius: 20px;
@@ -211,46 +250,50 @@ header aside input[type="text"] {
   counter-increment: my-counter;
   position: relative;
 }
-.work .container .boxwork h4 {
+.work .container .box-work h4 {
   color: black;
 }
-.work .container .boxwork h4::after {
+.work .container .box-work h4::after {
   content: " 0"counter(my-counter);
 }
-.work .container .boxwork a img {
+.work .container .box-work a img {
   max-width: 100%;
   border-radius: 10px;
+  min-height: 200px;
+  max-height: 200px;
 }
-.work .container .boxwork .info {
+.work .container .box-work .info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 2px solid black;
 }
-.work .container .boxwork .info a {
+.work .container .box-work .info a,
+.work .container .box-work .info a i {
+  text-decoration: none;
   color: black;
   font-size: 20px;
   background-color: transparent;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   transition: var(--trans);
 }
-.work .container .boxwork .info a:hover,
-.work .container .boxwork .info a:focus {
-  background-color: #5800ff;
+.work .container .box-work .info a:hover,
+.work .container .box-work .info a:focus {
+  background-color: #7573736e;
 }
-.work .container .boxwork .info a:hover ion-icon {
+.work .container .box-work .info a:hover i {
   color: white;
 }
-.work .container .boxwork span {
+.work .container .box-work span {
   pointer-events: none;
 }
-.work .container .boxwork span h6 {
+.work .container .box-work span h6 {
   position: relative;
   transition: var(--trans);
   margin-top: 10px;
@@ -258,26 +301,25 @@ header aside input[type="text"] {
   pointer-events: visible;
   width: fit-content;
 }
-.work .container .boxwork span h6:hover{
+.work .container .box-work span h6:hover{
   padding-bottom: 30px;
 }
-.work .container .boxwork span p {
+.work .container .box-work span p {
   transition: var(--trans);
   position: absolute;
   bottom: -100px;
   white-space: nowrap;
 }
-.work .container .boxwork span:hover p {
+.work .container .box-work span:hover p {
   bottom: -10px;
 }
 /* ===================== Start Contact ===================== */
 .contact {
   padding-bottom: 50px;
-  background-color: darkcyan;
+  background-color: var(--bg-color);
 }
 .contact .container {
   display: grid;
-  /* gap: 20px; */
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 @media(max-width: 767px) {
@@ -285,27 +327,25 @@ header aside input[type="text"] {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
-.contact .container .box {
+.contact .container .box-contact {
   gap: 10px;
   padding: 20px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
 }
-.contact .container .box input, textarea {
+.contact .container .box-contact input, textarea {
   border: 2px solid black;
   outline: none;
   padding: 15px;
   border-radius: 10px;
-  /* width: 100%; */
   background-color: transparent;
 }
-.contact .container .box textarea {
+.contact .container .box-contact textarea {
   min-height: 200px;
   resize: none;
 }
-.contact .container .box input[type="button"] {
+.contact .container .box-contact input[type="button"] {
   padding: 10px 20px;
   border: transparent;
   background-color: black;
@@ -313,11 +353,11 @@ header aside input[type="text"] {
   width: fit-content;
   font-family: 'Bruno Ace SC', cursive;
 }
-.contact .container .box:last-child {
+.contact .container .box-contact:last-child {
   align-items: flex-start;
   justify-content: center;
 }
-.contact .container .box img {
+.contact .container .box-contact img {
   max-width: 100%;
 }
 /* ===================== Start Footer ===================== */
@@ -344,7 +384,7 @@ footer .social li a:hover i {
   scale: 2;
   color: #5800ff;
 }
-
+/* ===================== End Page ===================== */
 /* :root {
   --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
