@@ -105,6 +105,9 @@ header nav a.active {
     padding: 10px;
     display: block;
   }
+  header nav .menu a:hover {
+    color: #5800ff;
+  }
 }
 /* ===================== Start Title ===================== */
 .title {
@@ -135,7 +138,7 @@ header nav a.active {
   transition: var(--main-transition);
 }
 .title .container button:hover {
-  background-color: rgb(37, 36, 36);
+  background-color: #5800ff;
 }
 .title .container button i {
   margin-right: 5px;
@@ -187,7 +190,7 @@ header nav a.active {
   background-color: var(--bg-color);
 }
 .skills .container {
-grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .skills .container .skill {
   padding: 20px;
@@ -196,6 +199,9 @@ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   text-align: center;
   scale: .9;
   transition: var(--main-transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .skills .container .skill:hover {
   box-shadow: 0 0 8px #fff;
@@ -207,8 +213,21 @@ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .skills .container .skill h6 {
   margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: 20px;
+}
+.progress {
+  background-color: #5800ff;
+  width: 100%;
+}
+.skill .progress span {
+  color: white;
+  width: 20%;
+  margin-left: 5px;
+  align-items: center;
+  display: flex;
+  transition: all 0.3s linear;
 }
 /* ===================== Start Work ===================== */
 .work {
@@ -219,11 +238,13 @@ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .work .container .box-work {
-  background-color: rgba(32, 32, 32, 0.144);
+  /* background-color: rgba(32, 32, 32, 0.144); */
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 20px;
   overflow: hidden;
   counter-increment: my-counter;
+  box-shadow: 0 0 10px #ccc;
 }
 .work .container .box-work h4::after {
   content: " 0"counter(my-counter);
@@ -250,15 +271,16 @@ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
   border-radius: 50%;
   transition: var(--main-transition);
 }
 .work .container .box-work .info a:hover,
 .work .container .box-work .info a:focus {
-  background-color: #7573736e;
+  background-color: #ddd;
 }
 .work .container .box-work .info a:hover i {
-  color: white;
+  color: #0d6efd;
 }
 .work .container .box-work span {
   pointer-events: none;
@@ -313,6 +335,10 @@ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   background-color: black;
   color: white;
   width: fit-content;
+  transition: var(--main-transition);
+}
+.contact .container .box-contact input[type="button"]:hover {
+  background-color: #5800ff;
 }
 .contact .container .box-contact img {
   max-width: 100%;
@@ -329,7 +355,7 @@ footer .social li a {
   display: flex;
   justify-content: center;
   place-items: center;
-  background-color: gold;
+  background-color: white;
   width: 40px;
   height: 40px;
 }
@@ -342,3 +368,48 @@ footer .social li a:hover i {
   color: #5800ff;
 }
 /* ===================== End Page ===================== */
+/* :root {
+  --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-body-bg-rgb: 255, 255, 255;
+} */
