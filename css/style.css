@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Open+Sans&family=Poppins:wght@200&display=swap");
+/* ================= Start Global Root ================= */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bruno+Ace+SC&family=Open+Sans:wght@400;700&family=Oswald:wght@700&family=Poppins:wght@200;500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -7,37 +8,12 @@
 :root {
   --padding: 50px;
   --main-transition: 0.3s;
-  --bg-color: rgb(234, 235, 236);
   --primary-color: #5800ff;
   --success-color: #0a66c2;
   --main-color: #b9b9b9;
   --light-color: #ffffff;
   --dark-color: #000000;
 }
-/* Components*/
-.main-title {
-  font-size: 5rem;
-  font-weight: 900;
-  font-family: "Rubik Moonrocks";
-  color: var(--dark-color);
-  text-transform: uppercase;
-}
-@media (max-width: 575px) {
-  .main-title {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 767px) {
-  .main-title {
-    font-size: 2.5rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .main-title {
-    font-size: 3rem;
-  }
-}
-/* Components*/
 a {
   text-decoration: none;
 }
@@ -57,93 +33,202 @@ html {
   background-color: var(--c-black);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #5800ff;
-  border-radius: 50px;
-  transition: var(--trans);
+  background-color: var(--primary-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0d6efd;
+  background-color: #020202;
 }
-/* ===================== Start Page ===================== */
 body {
-  font-family: "Bruno Ace SC", cursive, "Open Sans", sans-serif, "Poppins",
-    Roboto;
+  font-family: "Open Sans", sans-serif, "Poppins", "Oswald", "Bebas Neue",
+    "Anton", "Bruno Ace SC", cursive;
+  background-color: #f8f8f8;
+  color: #020202;
 }
-header {
-  background-color: var(--dark-color);
-  /* font-family: "Bruno Ace SC", cursive; */
-  height: 50px;
-  color: var(--light-color);
-  z-index: 100;
-  top: 0;
+body.active {
+  background-color: #020202;
+  color: #f8f8f8;
 }
-header nav a {
-  transition: var(--main-transition);
+/* ================= End Global Root ================= */
+/* Components*/
+#desc {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
 }
-header nav a:hover,
-header nav a.active {
-  color: var(--light-color);
-}
-@media (max-width: 992px) {
-  header nav #toggle {
-    cursor: pointer;
+@media (max-width: 575px) {
+  #desc {
+    font-size: 1.5rem;
   }
-  header nav .menu {
-    display: none;
-  }
-  header .fa-moon {
-    color: var(--light-color);
-  }
-}
-@media (max-width: 992px) {
-  header nav .menu {
-    right: -100px;
-    padding: 5px;
-  }
-  header nav:hover .menu {
-    display: block;
-    position: absolute;
-    right: -60px;
-    top: 100%;
-    background-color: var(--dark-color);
-    font-size: 20px;
-    border-radius: 0 0 0 20px;
-  }
-  header nav .menu a {
-    padding: 10px;
-    display: block;
-  }
-}
-/* ===================== Start Title ===================== */
-.title {
-  padding-top: var(--padding);
-  height: 100vh;
-  /* font-family: cursive; */
 }
 @media (max-width: 767px) {
-  .title .container :is(h1, p) {
-    text-align: center;
+  #desc {
+    font-size: 2.5rem;
   }
 }
-.title .container p {
-  line-height: 1.8em;
+@media (min-width: 768px) and (max-width: 992px) {
+  #desc {
+    font-size: 3rem;
+  }
 }
-.title .container button {
+.btn {
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--dark-color);
   border: var(--dark-color);
   color: var(--light-color);
+  font-family: "Bruno Ace SC", cursive;
   transition: var(--main-transition);
 }
-.title .container button:hover {
+.btn:hover {
   background-color: var(--primary-color);
 }
-.title .container button i {
+/* Components*/
+/* ===================== Start Toggle ===================== */
+#toggle{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 32px;
+  background-color: #222;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--main-transition);
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0,0.1),
+              inset 0 8px 8px rgba(0, 0, 0,0.1),
+              inset 0 -4px 4px rgba(0, 0, 0,0.1);
+}
+#toggle.active{
+  background-color: #fff;
+  box-shadow: inset 0 2px 60px rgba(0, 0, 0,0.1),
+              inset 0 2px 8px rgba(0, 0, 0,0.1),
+              inset 0 -4px 4px rgba(0, 0, 0,0.05);
+}
+#toggle .indicator{
+  position: absolute;
+  left: 3px;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 50%;
+  transform: scale(0.9);
+  box-shadow: 0 8px 40px rgba(0, 0, 0,0.5),
+              inset 0 4px 4px rgba(255, 255, 255,0.2),
+              inset 0 -4px 4px rgba(255, 255, 255,0.2);
+  transition: var(--main-transition);
+}
+#toggle.active .indicator{
+  left: 24px;
+  background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+  box-shadow: 0 8px 20px rgba(0, 0, 0,0.1),
+  inset 0 4px 4px rgba(255, 255, 255,1),
+  inset 0 -4px 4px rgba(255, 255, 255,01);
+}
+@media(max-width: 767px) {
+  #toggle.active .indicator {
+    left: 22px;
+  }
+}
+@media(max-width: 575px) {
+  #toggle.active .indicator {
+    left: 16px;
+  }
+}
+/* ===================== End Toggle ===================== */
+/* ===================== Start Title ===================== */
+/* ===================== Start Header ===================== */
+header {
+  height: 50px;
+  z-index: 100;
+  top: 0;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+header .logo,
+#menubar {
+  font-family: "Bruno Ace SC", cursive;
+}
+.logo {
+  pointer-events: painted;
+}
+@media (max-width: 992px) {
+  header nav #menubar {
+    cursor: pointer;
+  }
+  header nav .menu {
+    display: none;
+    background-color: #3f573f;
+    /* width: 200px; */
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    font-size: 20px;
+  }
+  header nav .menu li a {
+    background-color: purple;
+    display: block;
+    margin: 5px;
+    /* width: fit-content; */
+  }
+  header nav .menu li a:hover {
+    background-color: #020202;
+  }
+}
+@media (max-width: 992px) {
+  header nav:hover .menu-nav {
+    /* display: block; */
+    /* position: absolute; */
+    /* top: 100%; */
+    /* right: -60px; */
+    /* right: 0; */
+    /* background-color: var(--dark-color); */
+
+    /* border-radius: 0 0 0 20px; */
+    /* transition: 5s; */
+  }
+  header nav .menu {
+    /* right: -100px; */
+    /* right: 0; */
+    /* right: -250px; */
+    /* padding: 5px; */
+    /* width: 200px; */
+    /* height: 100vh; */
+    /* transition: 5s; */
+  }
+  header nav .menu li {
+    /* padding-top: 10px; */
+    /* display: block; */
+    /* width: fit-content; */
+    /* transition: 5s; */
+  }
+  header nav .menu li:hover a {
+    /* padding-left: 25px; */
+  }
+}
+/* ===================== End Header ===================== */
+
+/* ===================== Start Description ===================== */
+.description {
+  padding-top: var(--padding);
+  height: 100vh;
+}
+@media (max-width: 767px) {
+  .description .container :is(h1, p) {
+    text-align: center;
+  }
+}
+.description .container p {
+  line-height: 1.8em;
+  font-family: "Poppins", sans-serif;
+}
+.description .container button {
+  /* color: var(--light-color); */
+}
+.description .container button i {
   margin-right: 5px;
   transition: var(--main-transition);
 }
-.title .container button:hover i {
+.description .container button:hover i {
   scale: 1.3;
   rotate: 10deg;
 }
@@ -151,11 +236,10 @@ header nav a.active {
 .about {
   padding-top: var(--padding);
   padding-bottom: var(--padding);
-  background-color: var(--bg-color);
-  /* font-family: cursive; */
 }
 .about p {
   line-height: 1.8em;
+  font-family: "Poppins", sans-serif;
 }
 /* ===================== Start Services ===================== */
 .services {
@@ -171,10 +255,13 @@ header nav a.active {
   border-radius: 20px;
   scale: 0.9;
   background-color: var(--light-color);
-  box-shadow: 0 0 10px #ddd;
+  color: var(--dark-color);
+  box-shadow: inset 0 0 10px #ddd;
   transition: var(--main-transition);
+  min-height: 200px;
 }
 .services .container .serv-box:hover {
+  box-shadow: 0 0 10px #ddd;
   scale: 1;
 }
 .services .container .serv-box i {
@@ -182,17 +269,16 @@ header nav a.active {
 }
 .services .container .serv-box h4 {
   margin: 20px 0;
-  /* font-family: "Bruno Ace SC"; */
+  font-family: "Bruno Ace SC";
 }
 .services .container .serv-box p {
   line-height: 2;
-  /* font-family: cursive; */
+  font-size: 1.1em;
 }
 /* ===================== Start Skills ===================== */
 .skills {
   padding-top: var(--padding);
   padding-bottom: var(--padding);
-  background-color: var(--bg-color);
 }
 .skills .container {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -201,63 +287,42 @@ header nav a.active {
   padding: 20px;
   border-radius: 20px;
   background-color: var(--light-color);
+  color: var(--dark-color);
   text-align: center;
   scale: 0.9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: inset 0 0 10px #ddd;
   transition: var(--main-transition);
-  /* font-family: "Bruno Ace SC"; */
 }
 .skills .container .skill:hover {
-  box-shadow: 0 0 8px var(--light-color);
+  /* box-shadow: 0 0 10px var(--light-color); */
   scale: 1;
-}
-.skills .container .skill i {
-  font-size: 50px;
 }
 .skills .container .skill img {
   max-width: 100px;
   max-height: 100px;
 }
 .skills .container .skill h6 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   font-weight: bold;
   font-size: 20px;
-}
-.progress {
-  width: 100%;
-}
-.progress:hover span {
-  background-color: red;
+  font-family: "Bruno Ace SC", cursive;
 }
 .skill .progress span {
-  color: var(--light-color);
-  height: 100%;
-  align-items: center;
-  display: flex;
-  transition: all 0.3s linear;
-  border-radius: 6px;
-}
-.skill .progress span::before {
-  /* content: attr(data-width); */
-  /* height: 100%; */
-  /* position: absolute; */
-  /* left: 0; */
-  /* top: 0; */
+  background-color: var(--primary-color);
+  transition: width 3s linear;
 }
 /* ===================== Start Work ===================== */
 .work {
   padding-top: var(--padding);
   padding-bottom: var(--padding);
-  /* font-family: cursive; */
+  font-family: "Bruno Ace SC", cursive;
 }
 .work .container {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .work .container .box-work {
   background-color: var(--light-color);
+  color: var(--dark-color);
   padding: 10px;
   border-radius: 20px;
   overflow: hidden;
@@ -297,9 +362,6 @@ header nav a.active {
 .work .container .box-work .info a:focus {
   background-color: #ddd;
 }
-.work .container .box-work .info a:hover i {
-  color: var(--success-color);
-}
 .work .container .box-work span {
   pointer-events: none;
 }
@@ -309,7 +371,7 @@ header nav a.active {
   pointer-events: visible;
   width: fit-content;
   transition: var(--main-transition);
-  /* font-family: "Bruno Ace SC"; */
+  font-weight: bold;
 }
 .work .container .box-work span h6:hover {
   padding-bottom: 30px;
@@ -319,6 +381,8 @@ header nav a.active {
   bottom: -100px;
   white-space: nowrap;
   transition: var(--main-transition);
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
 }
 .work .container .box-work span:hover p {
   bottom: -10px;
@@ -327,7 +391,6 @@ header nav a.active {
 .contact {
   padding-top: var(--padding);
   padding-bottom: var(--padding);
-  background-color: var(--bg-color);
 }
 .contact .container {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -343,40 +406,44 @@ textarea {
   outline: none;
   padding: 15px;
   border-radius: 10px;
-  background-color: transparent;
-  /* font-family: cursive; */
 }
 .contact .container .box-contact textarea {
   min-height: 200px;
   resize: none;
 }
-.contact .container .box-contact input[type="button"] {
-  padding: 10px 20px;
-  border: transparent;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  width: fit-content;
-  transition: var(--main-transition);
-}
-.contact .container .box-contact input[type="button"]:hover {
-  background-color: var(--primary-color);
+.contact .container .box-contact button {
+  margin-right: auto;
 }
 .contact .container .box-contact img {
   max-width: 100%;
 }
+/* ===================== Start Page ===================== */
+
+header {
+  /* background-color: var(--dark-color); */
+  /* font-family: "Bruno Ace SC", cursive; */
+  box-shadow: 0 0 10px #ddd;
+}
+header nav a {
+  transition: var(--main-transition);
+}
+header nav a:hover,
+header nav a.active {
+  /* color: var(--light-color); */
+}
 /* ===================== Start Footer ===================== */
 footer {
-  background-color: var(--dark-color);
   padding: 70px 0 0;
+  font-family: "Bruno Ace SC", cursive;
+  box-shadow: 0 0 10px;
 }
 footer .container-fluid {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 footer .foot-box h3 {
-  color: var(--light-color);
   font-size: 50px;
   font-weight: bold;
-  /* margin: 0 0 20px; */
+  margin: 0 0 20px;
 }
 footer .foot-box .social li a {
   display: flex;
@@ -408,11 +475,10 @@ footer .social .github:hover {
   background-color: #111;
 }
 footer .social .instagram:hover {
-  background: linear-gradient( 45deg,#5851db,#fd1d1d);
+  background: linear-gradient(45deg, #5851db, #fd1d1d);
 }
 footer .foot-box .txt {
   line-height: 1.8em;
-  color: var(--main-color);
 }
 footer .foot-box .link li:not(:last-child) {
   border-bottom: 1px solid #444;
@@ -420,14 +486,10 @@ footer .foot-box .link li:not(:last-child) {
 footer .foot-box .link li a {
   display: block;
   padding: 15px 0;
-  color: var(--main-color);
-  width: fit-content;
-  pointer-events: visible;
   transition: var(--main-transition);
 }
 footer .foot-box .link li a:hover {
   padding-left: 10px;
-  color: var(--light-color);
 }
 footer .foot-box .link li a::before {
   font-family: var(--fa-style-family-classic);
@@ -439,7 +501,6 @@ footer .foot-box .link li a::before {
 footer .foot-box .line {
   display: flex;
   align-items: center;
-  color: var(--main-color);
   padding: 15px 0;
 }
 footer .foot-box .line i {
@@ -458,19 +519,19 @@ footer .foot-gallery {
   padding: 15px 0;
 }
 footer .foot-gallery img {
-  border: 3px solid var(--light-color);
+  border: 3px solid;
   width: 78px;
   height: 78px;
   margin: 2px;
 }
 footer .copyright {
-  padding: 25px 0;
+  padding: 20px 0;
   text-align: center;
-  color: var(--light-color);
   margin: 50px 0 0;
   border-top: 1px solid #444;
+  font-family: "Anton", sans-serif;
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   footer {
     text-align: center;
   }
@@ -484,6 +545,23 @@ footer .copyright {
   }
   footer .foot-box .line i {
     margin-bottom: 10px;
+  }
 }
+/* ===================== Start ScrollToTop ===================== */
+.up {
+  position: fixed;
+  bottom: 10px;
+  right: -30px;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  font-size: 15px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Anton", sans-serif;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.up.show {
+  right: 10px;
 }
 /* ===================== End Page ===================== */
