@@ -20,62 +20,61 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- ===================== Style ===================== -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="compnent.css" /> -->
     <!-- ===================== Google Fonts ===================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Open+Sans&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bruno+Ace+SC&family=Open+Sans:wght@400;700&family=Oswald:wght@700&family=Poppins:wght@200;500&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="page">
       <!-- ===================== Header ===================== -->
       <header class="d-flex align-items-center justify-content-between col-12 position-fixed">
         <main class="container-fluid d-flex align-items-center justify-content-between">
-          <aside class="leftSide">
-            <div class="logo">
-              <a href="" class="navbar-brand">Karim Dev.</a>
-            </div>
-          </aside>
+              <div class="logo">
+                <a href="" class="navbar-brand logo">Karim Dev.</a>
+              </div>
           <!-- ===================== Navigation ===================== -->
           <nav class="d-flex align-items-center position-relative">
             <article class="d-flex align-items-center">
-              <span class="fw-bold fs-3 d-lg-none" id="toggle">menu</span>
             </article>
-            <div class="menu">
-              <a href="#title" class="active">Home</a>
-              <a href="#about" class="">about</a>
-              <a href="#services" class="">services</a>
-              <a href="#skills" class="">skillks</a>
-              <a href="#work" class="">work</a>
-              <a href="#contact" class="">contact</a>
+            <span class="fw-bold fs-3 d-lg-none" id="menubar">menu</span>
+            <div class="menu nav">
+              <li class="nav-item"><a href="#title" class="nav-link active">Home</a></li>
+              <li class=""><a href="#about" class="nav-link">About</a></li>
+              <li class=""><a href="#services" class="nav-link">Services</a></li>
+              <li class=""><a href="#skills" class="nav-link">Skillks</a></li>
+              <li class=""><a href="#work" class="nav-link">Work</a></li>
+              <li class=""><a href="#contact" class="nav-link">Contact</a></li>
             </div>
           </nav>
         </main>
-        <article class="d-flex align-items-center">
-          <i class="fa-solid fa-moon mx-2 fs-2"></i>
+        <article class="d-flex align-items-center mx-2" id="toggle">
+            <i class="indicator"></i>
         </article>
       </header>
-      <!-- ===================== Title ===================== -->
-      <section class="title d-flex align-items-center" id="title">
+            <!-- ===================== Title ===================== -->
+      <section class="description d-flex align-items-center" id="description">
         <main class="container">
-          <h1 class="main-title">Karim Tarek <br />Front-End Developer</h1>
+          <h1 class="desc" id="desc">Karim Tarek <br />Front-End Developer</h1>
           <p>
-            a professional and creative web programmer at work<br />my goal is
-            to presentthe client's idea in the simplest and most beautiful way
-            possible
+            A Professional And Creative Web Programmer At Work<br />My Goal is
+            To Presentthe Client's Idea In The Simplest And Most Beautiful Way
+            Possible
           </p>
-          <button class=""><i class="fa-brands fa-whatsapp"></i>My Phone</button>
+          <button class="btn" onclick="myFunction()"><i class="fa-brands fa-whatsapp"></i>My Phone</button>
         </main>
       </section>
       <!-- ===================== About ===================== -->
       <section class="about" id="about">
-        <h1 class="main-title container-fluid">about</h1>
+        <h1 class="desc container-fluid">About</h1>
         <main class="container">
           <p>A Beginner-Level Vocational With Appropriate Knowledge In The Field Of Front-End Design For Websites. I Am Worked Independently After Graduating From University And During Military Service , I Am Looking For A Job Where I Can Use My Skills To Achieve The Goals Of The Organization To Which I Belong, As Well As Increase My Experience In My Field.</p>
         </main>
       </section>
-      <!-- ===================== Services ===================== -->
+            <!-- ===================== Services ===================== -->
       <section class="services" id="services">
-        <h1 class="main-title container-fluid">Services</h1>
+        <h1 class="desc container-fluid">Services</h1>
         <main class="container d-grid gap-2">
           <article class="serv-box">
             <i class="fa-solid fa-code"></i>
@@ -99,106 +98,106 @@
           </article>
         </main>
       </section>
-      <!-- ===================== Skills ===================== -->
+            <!-- ===================== Skills ===================== -->
       <section class="skills" id="skills">
-        <h1 class="main-title container-fluid">skills</h1>
+        <h1 class="desc container-fluid">Skills</h1>
         <main class="container d-grid gap-4">
           <div class="skill">
             <img decoding="async" src="img/logo-html5.png" alt="">
             <h6>HTML5</h6>
             <div class="progress">
-              <span style="width: 90%" data-width="90%">90%</span>
+              <span style="width: 0" data-width="90%">90%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-css3.png" alt="">
             <h6>CSS3</h6>
             <div class="progress">
-              <span style="width: 70%" data-width="70%">70%</span>
+              <span style="width: 0" data-width="70%">70%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-bootstrap.png" alt="">
             <h6>Bootstrap</h6>
             <div class="progress">
-              <span style="width: 80%" data-width="80%">80%</span>
+              <span style="width: 0" data-width="80%">80%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-sass.png" alt="">
             <h6>Sass</h6>
             <div class="progress">
-              <span style="width: 75%" data-width="75%">75%</span>
+              <span style="width: 0" data-width="75%">75%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-javascript.png" alt="">
             <h6>JavaScript</h6>
             <div class="progress">
-              <span style="width: 90%" data-width="90%">90%</span>
+              <span style="width: 0" data-width="90%">90%</span>
             </div>
           </div>
           <div class="skill">
-            <img decoding="async" src="img/logo-react-js.png" alt="">
+            <img decoding="async" src="img/logo-react.png" alt="">
             <h6>React Js</h6>
             <div class="progress">
-              <span style="width: 80%" data-width="80%">80%</span>
+              <span style="width: 0" data-width="80%">80%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-node-js.png" alt="">
             <h6>Node Js</h6>
             <div class="progress">
-              <span style="width: 70%" data-width="70%">70%</span>
+              <span style="width: 0" data-width="70%">70%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-jquery.png" alt="">
             <h6>Jquery</h6>
             <div class="progress">
-              <span style="width: 61%" data-width="61%">61%</span>
+              <span style="width: 0" data-width="61%">61%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-angular.png" alt="">
             <h6>Angular</h6>
             <div class="progress">
-              <span style="width: 61%" data-width="61%">61%</span>
+              <span style="width: 0" data-width="61%">61%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-typescript.png" alt="">
             <h6>TypeScript</h6>
             <div class="progress">
-              <span style="width: 93%" data-width="93%">93%</span>
+              <span style="width: 0" data-width="93%">93%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-c.png" alt="">
             <h6>C++</h6>
             <div class="progress">
-              <span style="width: 76%" data-width="76%">76%</span>
+              <span style="width: 0" data-width="76%">76%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-python.png" alt="">
             <h6>Python</h6>
             <div class="progress">
-              <span style="width: 85%" data-width="85%">85%</span>
+              <span style="width: 0" data-width="85%">85%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-php.png" alt="">
             <h6>PHP</h6>
             <div class="progress">
-              <span style="width: 90%" data-width="90%">90%</span>
+              <span style="width: 0" data-width="90%">90%</span>
             </div>
           </div>
           <div class="skill">
             <img decoding="async" src="img/logo-laravel.png" alt="">
             <h6>Laravel</h6>
             <div class="progress">
-              <span style="width: 87%" data-width="87%">87%</span>
+              <span style="width: 0" data-width="87%">87%</span>
             </div>
           </div>
           <div class="skill">
@@ -210,10 +209,10 @@
           </div>
         </main>
       </section>
-      <!-- ===================== Work ===================== -->
+            <!-- ===================== Work ===================== -->
       <section class="work" id="work">
-        <h1 class="main-title container-fluid">work</h1>
-        <main class="container d-grid gap-3">
+        <h1 class="desc container-fluid">Work</h1>
+        <main class="container d-grid gap-4">
           <article class="box-work">
             <h4>Template</h4>
             <a href=""><img decoding="async" loading="lazy" src="img/p-github.jpeg" alt=""/></a>
@@ -296,20 +295,20 @@
       </section>
       <!-- ===================== Contact ===================== -->
       <section class="contact" id="contact">
-        <h1 class="main-title container-fluid">contact</h1>
+        <h1 class="desc container-fluid">Contact</h1>
         <main class="container d-grid gap-3">
           <aside class="box-contact gap-2 d-flex flex-column">
             <input class="" type="text" placeholder="Name" />
             <input class="" type="email" placeholder="Email" />
             <textarea class="" placeholder="Message"></textarea>
-            <input class="" type="button" value="Send Message" />
+            <button class="btn" onclick="myFunction()">Send Message</button>
           </aside>
           <aside class="box-contact">
             <img decoding="async" loading="lazy" src="img/creative-logo-web-developer.jpg" alt=""/>
           </aside>
         </main>
       </section>
-      <!-- ===================== Footer ===================== -->
+            <!-- ===================== Footer ===================== -->
       <footer>
         <main class="container-fluid d-grid gap-3">
           <div class="foot-box">
@@ -360,15 +359,13 @@
             <img decoding="async" src="img/gallery-06.jpg" alt="">
           </div>
         </main>
-        <p class="copyright">Made With &lt; By Karim</p>
+        <p class="copyright">Copyright <span>&copy;</span> all rights reserved</p>
       </footer>
+      <span class="up">Up</span>
     </div>
     <!-- ===================== JavaScript ===================== -->
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
     <!-- ===================== IonIcons ===================== -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
-  <!-- <i class="fa-brands fa-angular"></i> -->
 </html>
